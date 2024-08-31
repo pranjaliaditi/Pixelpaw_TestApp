@@ -28,10 +28,3 @@ This project is a Windows application developed using Windows App SDK and WinUI3
 - **Description:** Displays a log of session history for each time the app is opened.
 - **Design Focus:** Maintain visual consistency with the provided design.
 
-## Getting Started
-
-### Prerequisites
-
-- **Windows App SDK:** Ensure that the latest version of Windows App SDK is installed.
-- **WinUI3:** Install WinUI3 for UI development.
-
