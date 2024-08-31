@@ -23,14 +23,13 @@ This project is a Windows application developed using Windows App SDK and WinUI3
 - **Description:** An animated graphic element simulating an acceleration bar.
 - **Functionality:** When the "Accelerate" button is pressed and held, the bar fills up, mimicking an acceleration effect similar to game UI elements.
 
-## App Final View
-
-Here is the final view of the app:
-
-![App Design](Final product.png)
-
 ### Session History
 
 - **Description:** Displays a log of session history for each time the app is opened.
 - **Design Focus:** Maintain visual consistency with the provided design.
 
+## App Final View
+
+Here is the final view of the app:
+
+![App Design](Final%20product.png)
