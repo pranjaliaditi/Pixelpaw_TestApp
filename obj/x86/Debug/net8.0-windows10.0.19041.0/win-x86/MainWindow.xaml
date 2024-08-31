@@ -1,0 +1,137 @@
+﻿<Window
+    x:Class="Pixelpaw.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Pixelpaw"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="Test app">
+
+    <Grid Background="#F5F5F5">
+
+        <!-- About Section -->
+        <StackPanel
+            Margin="20,20,20,0"
+            VerticalAlignment="Top"
+            Background="White"
+            Padding="20"
+            CornerRadius="10"
+            Width="300"
+            Height="150">
+
+            <!-- About Title -->
+            <TextBlock
+                Text="About"
+                FontSize="14"
+                FontWeight="SemiBold"
+                Foreground="#82b1dc"
+                Margin="0,0,0,10" />
+
+            <!-- App Version -->
+            <TextBlock
+                Text="App version : XX.XX.XX"
+                FontSize="10"
+                Foreground="#4A4A4A"
+                Margin="0,0,0,10" />
+
+            <!-- Separator -->
+            <Rectangle
+                Height="1"
+                Fill="LightGray" 
+                Margin="0,0,0,10" />
+
+            <!-- Heading Title -->
+            <TextBlock
+                Text="Heading"
+                FontSize="14"
+                FontWeight="SemiBold"
+                Foreground="#82b1dc"
+                Margin="0,0,0,10" />
+
+            <!-- Placeholder Text -->
+            <TextBlock
+                Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel enim dapibus, rutrum nunc id, ultricies justo."
+                TextWrapping="Wrap"
+                FontSize="10"
+                Foreground="#4A4A4A" />
+
+        </StackPanel>
+
+        <!-- Acceleration Bar Section -->
+        <StackPanel
+            Margin="20,200,20,0"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center">
+
+            <!-- Acceleration Bar -->
+            <Grid Width="50" Height="200" Background="DarkGray" VerticalAlignment="Bottom">
+                <Border Background="DarkGray" Width="50" Height="200"/>
+                <Border x:ConnectionId='5' x:Name="ProgressFill" Background="#005fb8" Width="50" Height="0" VerticalAlignment="Bottom"/>
+            </Grid>
+
+            <!-- Accelerate Button -->
+            <RepeatButton x:ConnectionId='4'
+                x:Name="AccelerateButton"
+                Content="Accelerate"
+                Width="120"
+                Height="40"
+                Margin="20,20,20,20"
+                HorizontalAlignment="Center"
+                Background="#0078D4"
+                Foreground="White"
+                FontSize="14"
+                FontWeight="SemiBold"
+                BorderBrush="DarkGray"
+                BorderThickness="1"
+                                         
+                                                            />
+        </StackPanel>
+
+        <!-- Session History Section -->
+        <StackPanel
+            Margin="20,20,20,20"
+            VerticalAlignment="Bottom"
+            Background="White"
+            Padding="10"
+            CornerRadius="10"
+            Width="300">
+
+            <!-- Session History Expander with ScrollViewer -->
+            <Expander Header="Session history" IsExpanded="True"
+                      FontSize="16" FontWeight="SemiBold" Foreground="#1F1F1F">
+
+                <!-- ScrollViewer to enable scrolling -->
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                    <ListView x:ConnectionId='2'
+                        x:Name="SessionHistoryListView"
+                        BorderBrush="LightGray"
+                        BorderThickness="1"
+                        
+                        Margin="0,10,0,0">
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" Margin="10,5">
+                                    <!-- Session Time -->
+                                    <TextBlock
+                                        Text="{Binding SessionTime}"
+                                        FontSize="12"
+                                        Foreground="#4A4A4A" />
+                                    <!-- Session Title -->
+                                    <TextBlock
+                                        Text="{Binding SessionTitle}"
+                                        FontSize="14"
+                                        FontWeight="SemiBold"
+                                        Foreground="#1F1F1F" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollViewer>
+            </Expander>
+        </StackPanel>
+
+    </Grid>
+</Window>
+
